@@ -34,6 +34,26 @@ type PdfViewPersistMap = {[uri: string]: PdfViewPersist};
 
 export class GlobalStateManager {
 
+    static addFlyLeTeXIfNeeded(context:vscode.ExtensionContext, servers: {
+        server: unknown;
+        api: BaseAPI;
+    }[]): void {
+        let needed = true;
+        if (servers.length !== 0) {
+            for (let i = 0, l = servers.length; i < j; i++) {
+                let server = servers[i];
+                if (server.server.href === 'https://tex.inoteexpress.com:8083') {
+                    needed = false;
+                    break;
+                }
+            }
+        }
+        if (needed) {
+            const url = new URL('https://tex.inoteexpress.com:8083');
+            this.addServer(context, url.host, url.href);
+        }
+    }
+
     static getServers(context:vscode.ExtensionContext): {server:ServerPersist, api:BaseAPI}[] {
         const persists = context.globalState.get<ServerPersistMap>(keyServerPersists, {});
         const servers = Object.values(persists).map(persist => {
@@ -46,8 +66,10 @@ export class GlobalStateManager {
         if (servers.length===0) {
             const url = new URL('https://www.overleaf.com');
             this.addServer(context, url.host, url.href);
+            addFlyLeTeXIfNeeded(context, servers);
             return this.getServers(context);
         } else {
+            addFlyLeTeXIfNeeded(context, servers);
             return servers;
         }
     }
