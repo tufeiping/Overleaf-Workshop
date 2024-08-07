@@ -385,7 +385,7 @@
         "when": "editorTextFocus && resourceScheme == overleaf-workshop"
       }
     ],
-    "configuration":{
+    "configuration": {
       "title": "%extension.displayName%",
       "properties": {
         "overleaf-workshop.compileOnSave.enabled": {
@@ -404,9 +404,18 @@
         "overleaf-workshop.pdfViewer.themes": {
           "type": "object",
           "default": {
-            "default": {"fontColor":"#000000", "bgColor":"#FFFFFF"},
-            "light":   {"fontColor":"#000000", "bgColor":"#F5F5DC"},
-            "dark":    {"fontColor":"#FBF0D9", "bgColor":"#4B4B4B"}
+            "default": {
+              "fontColor": "#000000",
+              "bgColor": "#FFFFFF"
+            },
+            "light": {
+              "fontColor": "#000000",
+              "bgColor": "#F5F5DC"
+            },
+            "dark": {
+              "fontColor": "#FBF0D9",
+              "bgColor": "#4B4B4B"
+            }
           },
           "patternProperties": {
             "^[a-zA-Z0-9_-]+$": {
@@ -434,7 +443,7 @@
           "type": "number",
           "default": 3,
           "scope": "machine",
-          "minimum": 1.0,
+          "minimum": 1,
           "maximum": 60,
           "markdownDescription": "%configuration.invisibleMode.historyRefreshInterval.markdownDescription%"
         },
@@ -442,7 +451,7 @@
           "type": "number",
           "default": 3,
           "scope": "machine",
-          "minimum": 1.0,
+          "minimum": 1,
           "maximum": 60,
           "markdownDescription": "%configuration.invisibleMode.chatMessageRefreshInterval.markdownDescription%"
         },
@@ -721,6 +730,7 @@
     "mime-types": "^2.1.35",
     "minimatch": "^9.0.3",
     "node-fetch": "^2.6.13",
+    "overleaf-workshop": "file:",
     "prettier": "^3.1.1",
     "socket.io-client": "github:overleaf/socket.io-client#0.9.17-overleaf-5",
     "uuid": "^9.0.1"

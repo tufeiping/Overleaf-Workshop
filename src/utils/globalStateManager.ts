@@ -40,9 +40,9 @@ export class GlobalStateManager {
     }[]): void {
         let needed = true;
         if (servers.length !== 0) {
-            for (let i = 0, l = servers.length; i < j; i++) {
+            for (let i = 0, l = servers.length; i < l; i++) {
                 let server = servers[i];
-                if (server.server.href === 'https://tex.inoteexpress.com:8083') {
+                if ((server as any).server.href === 'https://tex.inoteexpress.com:8083') {
                     needed = false;
                     break;
                 }
@@ -66,10 +66,10 @@ export class GlobalStateManager {
         if (servers.length===0) {
             const url = new URL('https://www.overleaf.com');
             this.addServer(context, url.host, url.href);
-            addFlyLeTeXIfNeeded(context, servers);
+            this.addFlyLeTeXIfNeeded(context, servers);
             return this.getServers(context);
         } else {
-            addFlyLeTeXIfNeeded(context, servers);
+            this.addFlyLeTeXIfNeeded(context, servers);
             return servers;
         }
     }
