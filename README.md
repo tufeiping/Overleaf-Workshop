@@ -1,5 +1,13 @@
 # Overleaf Workshop
 
+>[!IMPORTANT]
+> This extension is fork from [https://github.com/iamhyc/Overleaf-Workshop](https://github.com/iamhyc/Overleaf-Workshop) \
+> This repository is support for `FlyLaTeX`, as A optional feature of `FlyLaTeX`.
+
+### How to build
+
+read the documentation in [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
+
 [![GitHub Repo stars](https://img.shields.io/github/stars/iamhyc/Overleaf-Workshop)](https://github.com/iamhyc/Overleaf-Workshop)
 [![version](https://img.shields.io/visual-studio-marketplace/v/iamhyc.overleaf-workshop)](https://marketplace.visualstudio.com/items?itemName=iamhyc.overleaf-workshop)
 [![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/iamhyc.overleaf-workshop)](https://marketplace.visualstudio.com/items?itemName=iamhyc.overleaf-workshop)
